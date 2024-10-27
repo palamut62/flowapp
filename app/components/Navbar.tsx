@@ -11,7 +11,7 @@ export default function Navbar({ user, onLogout }: NavbarProps) {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-6">
           <h1 className="text-xl font-bold bg-gradient-to-r from-[#FFB672] to-[#ffa54f] bg-clip-text text-transparent">
-            Razor
+            Project Management
           </h1>
          
         </div>

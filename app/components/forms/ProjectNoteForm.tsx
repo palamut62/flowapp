@@ -47,13 +47,13 @@ export default function ProjectNoteForm({ user }: ProjectNoteFormProps) {
   };
 
   const [tempFormData, setTempFormData] = useState({
-    project_id: '',
-    date: '',
-    description: '',
-    correspondence_no: '',
-    reminder: '',
-    reminder_date: '',
-    is_reminder_active: false
+    project_id: '1',
+    date: '2024-02-01',
+    description: 'Haftalık ilerleme toplantısı yapıldı',
+    correspondence_no: 'MKT-2024/001',
+    reminder: 'Demir siparişi kontrol edilecek',
+    reminder_date: '2024-02-15',
+    is_reminder_active: true
   });
 
   const [tableData, setTableData] = useState<Array<typeof tempFormData>>([]);
@@ -115,7 +115,7 @@ export default function ProjectNoteForm({ user }: ProjectNoteFormProps) {
             value={tempFormData.project_id}
             onChange={(e) => setTempFormData({ ...tempFormData, project_id: e.target.value })}
             placeholder="Proje ID"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input
@@ -138,7 +138,8 @@ export default function ProjectNoteForm({ user }: ProjectNoteFormProps) {
             value={tempFormData.correspondence_no}
             onChange={(e) => setTempFormData({ ...tempFormData, correspondence_no: e.target.value })}
             placeholder="Mektup No"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
+            required
           />
           <input
             type="text"
@@ -159,7 +160,7 @@ export default function ProjectNoteForm({ user }: ProjectNoteFormProps) {
               type="checkbox"
               checked={tempFormData.is_reminder_active}
               onChange={(e) => setTempFormData({ ...tempFormData, is_reminder_active: e.target.checked })}
-              className="mr-2"
+              className="mr-2 text-[#FFB672] border-gray-300 rounded focus:ring-[#FFB672]"
             />
             <label>Hatırlatma Aktif</label>
           </div>

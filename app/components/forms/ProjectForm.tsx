@@ -11,14 +11,14 @@ interface ProjectFormProps {
 
 export default function ProjectForm({ user }: ProjectFormProps) {
   const [formData, setFormData] = useState({
-    jobName: '',
-    contractor: '',
-    startDate: '',
-    endDate: '',
-    contractAmount: '',
-    contractDate: '',
-    bidDate: '',
-    projectDuration: ''
+    jobName: 'Ankara Metro İnşaatı',
+    contractor: 'ABC İnşaat Ltd. Şti.',
+    startDate: '2024-01-01',
+    endDate: '2024-12-31',
+    contractAmount: '1500000',
+    contractDate: '2023-12-15',
+    bidDate: '2023-12-01',
+    projectDuration: '365'
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -61,7 +61,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="text"
             value={formData.jobName}
             onChange={(e) => setFormData({...formData, jobName: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
         </div>
@@ -73,7 +73,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="text"
             value={formData.contractor}
             onChange={(e) => setFormData({...formData, contractor: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -85,7 +85,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="date"
             value={formData.bidDate}
             onChange={(e) => setFormData({...formData, bidDate: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -97,7 +97,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="date"
             value={formData.contractDate}
             onChange={(e) => setFormData({...formData, contractDate: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -109,7 +109,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="number"
             value={formData.contractAmount}
             onChange={(e) => setFormData({...formData, contractAmount: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -121,7 +121,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="date"
             value={formData.startDate}
             onChange={(e) => setFormData({...formData, startDate: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -133,7 +133,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="number"
             value={formData.projectDuration}
             onChange={(e) => setFormData({...formData, projectDuration: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>
@@ -145,7 +145,7 @@ export default function ProjectForm({ user }: ProjectFormProps) {
             type="date"
             value={formData.endDate}
             onChange={(e) => setFormData({...formData, endDate: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-gray-50 text-gray-900"
             required
           />
         </div>

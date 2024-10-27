@@ -50,13 +50,13 @@ export default function CostItemForm({ user }: CostItemFormProps) {
   };
 
   const [tempFormData, setTempFormData] = useState({
-    project_id: '',
-    poz_no: '',
-    description: '',
-    unit: '',
-    quantity: '',
-    unit_price: '',
-    amount: ''
+    project_id: '1',
+    poz_no: 'Y.16.050/03',
+    description: 'C30 Hazır Beton Dökümü',
+    unit: 'm³',
+    quantity: '1000',
+    unit_price: '1200',
+    amount: '1200000'
   });
 
   const [tableData, setTableData] = useState<Array<typeof tempFormData>>([]);
@@ -119,7 +119,7 @@ export default function CostItemForm({ user }: CostItemFormProps) {
             value={tempFormData.project_id}
             onChange={(e) => setTempFormData({ ...tempFormData, project_id: e.target.value })}
             placeholder="Proje ID"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input
@@ -244,4 +244,3 @@ export default function CostItemForm({ user }: CostItemFormProps) {
     </div>
   );
 }
-

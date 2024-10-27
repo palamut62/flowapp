@@ -55,11 +55,11 @@ export default function Dashboard() {
   }, [router, supabase.auth]);
 
   return (
-    <div className="min-h-screen bg-[#F8F7F4] flex flex-col">
+    <div className="h-screen overflow-hidden bg-[#F8F7F4]">
       <Toaster position="top-right" />
       <Navbar user={user} onLogout={handleLogout} />
       
-      <main className="max-w-9xl mx-auto p-8 flex-grow">
+      <main className="h-[calc(100vh-8rem)] overflow-y-auto px-8 py-4">
         <div className="bg-white rounded-[20px] shadow-sm p-8">
           <Tabs defaultValue="projects" className="w-full">
             <TabsList className="grid grid-cols-8 gap-4 mb-8">
@@ -108,7 +108,7 @@ export default function Dashboard() {
         </div>
       </main>
 
-      <div className="absolute bottom-0 w-full">
+      <div className="fixed bottom-0 w-full">
         <StatusBar user={user} />
       </div>
     </div>

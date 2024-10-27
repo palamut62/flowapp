@@ -11,11 +11,11 @@ interface InspectionFormProps {
 
 export default function InspectionForm({ user }: InspectionFormProps) {
   const [formData, setFormData] = useState({
-    project_id: '',
-    upper_institution: '',
-    lower_institution: '',
-    supervisor_name: '',
-    supervisor_title: ''
+    project_id: '1',
+    upper_institution: 'Çevre ve Şehircilik Bakanlığı',
+    lower_institution: 'Ankara Büyükşehir Belediyesi',
+    supervisor_name: 'Ahmet Demir',
+    supervisor_title: 'Baş Denetçi'
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,7 +53,7 @@ export default function InspectionForm({ user }: InspectionFormProps) {
             type="number"
             value={formData.project_id}
             onChange={(e) => setFormData({...formData, project_id: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] text-gray-700 font-medium placeholder-gray-400"
             required
           />
         </div>
@@ -65,7 +65,7 @@ export default function InspectionForm({ user }: InspectionFormProps) {
             type="text"
             value={formData.upper_institution}
             onChange={(e) => setFormData({...formData, upper_institution: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
         </div>

@@ -44,11 +44,11 @@ export default function TimeExtensionForm({ user }: TimeExtensionFormProps) {
   };
 
   const [tempFormData, setTempFormData] = useState({
-    project_id: '',
-    date: '',
-    authority_approval: '',
-    duration: '',
-    new_end_date: ''
+    project_id: '1',
+    date: '2024-02-01',
+    authority_approval: 'Onay No: 2024/123',
+    duration: '90',
+    new_end_date: '2024-05-01'
   });
 
   const [tableData, setTableData] = useState<Array<typeof tempFormData>>([]);
@@ -108,7 +108,7 @@ export default function TimeExtensionForm({ user }: TimeExtensionFormProps) {
             value={tempFormData.project_id}
             onChange={(e) => setTempFormData({ ...tempFormData, project_id: e.target.value })}
             placeholder="Proje ID"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input

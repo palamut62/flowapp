@@ -11,10 +11,10 @@ interface ControlFormProps {
 
 export default function ControlForm({ user }: ControlFormProps) {
   const [tempFormData, setTempFormData] = useState({
-    project_id: '',
-    control_name: '',
-    control_title: '',
-    control_institution: '',
+    project_id: '1',
+    control_name: 'Mehmet Yılmaz',
+    control_title: 'İnşaat Yüksek Mühendisi',
+    control_institution: 'Yapı Denetim A.Ş.'
   });
   
   const [tableData, setTableData] = useState<Array<typeof tempFormData>>([]);
@@ -64,7 +64,7 @@ export default function ControlForm({ user }: ControlFormProps) {
             value={tempFormData.project_id}
             onChange={(e) => setTempFormData({...tempFormData, project_id: e.target.value})}
             placeholder="Proje ID"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input
@@ -72,7 +72,7 @@ export default function ControlForm({ user }: ControlFormProps) {
             value={tempFormData.control_name}
             onChange={(e) => setTempFormData({...tempFormData, control_name: e.target.value})}
             placeholder="Kontrol Elemanı Adı"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input

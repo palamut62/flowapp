@@ -11,11 +11,11 @@ interface CostIncreaseFormProps {
 
 export default function CostIncreaseForm({ user }: CostIncreaseFormProps) {
   const [formData, setFormData] = useState({
-    project_id: '',
-    date: '',
-    amount: '',
-    percentage: '',
-    authority_approval: ''
+    project_id: '1',
+    date: '2024-02-01',
+    amount: '500000',
+    percentage: '15',
+    authority_approval: 'Onay No: 2024/FY-001'
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -45,11 +45,11 @@ export default function CostIncreaseForm({ user }: CostIncreaseFormProps) {
   };
 
   const [tempFormData, setTempFormData] = useState({
-    project_id: '',
-    date: '',
-    amount: '',
-    percentage: '',
-    authority_approval: ''
+    project_id: '1',
+    date: '2024-02-01',
+    amount: '500000',
+    percentage: '15',
+    authority_approval: 'Onay No: 2024/FY-001'
   });
 
   const [tableData, setTableData] = useState<Array<typeof tempFormData>>([]);
@@ -102,7 +102,7 @@ export default function CostIncreaseForm({ user }: CostIncreaseFormProps) {
             value={tempFormData.project_id}
             onChange={(e) => setTempFormData({ ...tempFormData, project_id: e.target.value })}
             placeholder="Proje ID"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
           <input
@@ -133,7 +133,7 @@ export default function CostIncreaseForm({ user }: CostIncreaseFormProps) {
             value={tempFormData.authority_approval}
             onChange={(e) => setTempFormData({ ...tempFormData, authority_approval: e.target.value })}
             placeholder="Yetkili Onayı"
-            className="p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400 resize-none"
             required
           />
         </div>
@@ -203,4 +203,3 @@ export default function CostIncreaseForm({ user }: CostIncreaseFormProps) {
     </div>
   );
 }
-

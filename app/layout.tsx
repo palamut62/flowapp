@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/app/components/theme-provider";
+import ClientLayout from './ClientLayout';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Auth Dashboard",
   description: "Authentication and Dashboard Application",
-  
   icons: {
-    icon: '/favicon.ico', // public klasöründen referans
+    icon: '/favicon.ico',
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="tr" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ClientLayout>
           {children}
-        </ThemeProvider>
+        </ClientLayout>
       </body>
     </html>
   );

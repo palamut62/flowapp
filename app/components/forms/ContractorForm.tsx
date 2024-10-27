@@ -11,12 +11,12 @@ interface ContractorFormProps {
 
 export default function ContractorForm({ user }: ContractorFormProps) {
   const [formData, setFormData] = useState({
-    project_id: '',
-    name: '',
-    number: '',
-    address: '',
-    tax_number: '',
-    email: ''
+    project_id: '1',
+    name: 'ABC İnşaat Ltd. Şti.',
+    number: '0312 123 4567',
+    address: 'Çankaya Mah. Atatürk Cad. No:123 Ankara',
+    tax_number: '1234567890',
+    email: 'info@abcinsaat.com'
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -55,7 +55,7 @@ export default function ContractorForm({ user }: ContractorFormProps) {
             type="number"
             value={formData.project_id}
             onChange={(e) => setFormData({...formData, project_id: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] text-gray-700 font-medium placeholder-gray-400"
             required
           />
         </div>
@@ -67,7 +67,7 @@ export default function ContractorForm({ user }: ContractorFormProps) {
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672]"
+            className="w-full p-4 rounded-lg border border-gray-200 focus:outline-none focus:border-[#FFB672] bg-white text-gray-700 font-medium placeholder-gray-400"
             required
           />
         </div>
