@@ -8,6 +8,10 @@ import { useTheme } from 'next-themes';
 import type { Transaction } from '@/types/database.types';
 import { User } from '@supabase/supabase-js';
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from '../components/Navbar';
+import StatusBar from '../components/StatusBar';
+
+
 
 export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
@@ -113,61 +117,22 @@ const handleAddTransaction = async (e: React.FormEvent) => {
       <p className="text-xl">Oturum bulunamadı. Lütfen tekrar giriş yapın.</p>
     </div>;
   }
+  
+  
+
 
   return (
-    <div className="min-h-screen bg-[#F8F7F4]">
+    <div className="min-h-screen bg-[#F8F7F4] flex flex-col">
       <Toaster position="top-right" />
       
-      {/* Header */}
-      <header className="p-4 bg-white">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            {/* Logo */}
-            <h1 className="text-2xl font-bold">Razor</h1>
-            <div className="flex items-center text-gray-500 text-sm">
-              <span>Sales@Razor.uk</span>
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            {/* Language Selector */}
-            <button className="p-2 rounded-full hover:bg-gray-100">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.6 9h16.8M3.6 15h16.8" />
-              </svg>
-            </button>
-
-            {/* Sign Up Button */}
-            <button className="px-4 py-2 text-gray-700 hover:text-gray-900">
-              Sign up
-            </button>
-
-            {/* Request Demo Button */}
-            <button className="px-4 py-2 bg-[#FFB672] text-black rounded-lg hover:bg-[#ffa54f] transition-colors">
-              Request Demo
-            </button>
-          </div>
-        </div>
-      </header>
-
+      <Navbar user={user} onLogout={handleLogout} />
+      
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto p-8">
+      <main className="max-w-7xl mx-auto p-8 flex-grow">
         <div className="bg-white rounded-[20px] shadow-sm p-8">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-2">Transactions</h2>
-              <p className="text-gray-600">Manage your transactions and expenses</p>
-            </div>
-            <button
-              onClick={handleLogout}
-              className="px-4 py-2 bg-[#FFB672] text-black rounded-lg hover:bg-[#ffa54f] transition-colors"
-            >
-              Logout
-            </button>
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2">İşlemler</h2>
+            <p className="text-gray-600">İşlemlerinizi ve harcamalarınızı yönetin</p>
           </div>
 
           {/* Add Transaction Form */}
@@ -234,10 +199,10 @@ const handleAddTransaction = async (e: React.FormEvent) => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="max-w-7xl mx-auto p-4 text-center text-sm text-gray-600">
-        <p>Copyright @wework 2022 | Privacy Policy</p>
-      </footer>
+      {/* StatusBar'ı masaüstü uygulamalarındaki gibi sabitleyelim */}
+      <div className="absolute bottom-0 w-full">
+        <StatusBar user={user} />
+      </div>
     </div>
   );
 }

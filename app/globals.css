@@ -19,3 +19,51 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ... existing code ... */
+
+/* Form container boyutlarını küçült */
+.auth-form-container {
+  @apply max-w-sm p-4 my-3;
+}
+
+/* Input alanlarını küçült */
+.form-input {
+  font-size: 0.75rem; /* text-xs */
+  padding: 0.25rem 0.5rem; /* py-1 px-2 */
+  height: 2rem; /* h-8 */
+}
+
+/* Butonları küçült */
+.btn {
+  @apply text-xs py-1 px-3 h-8;
+}
+
+/* Başlıkları küçült */
+h1 {
+  @apply text-xl mb-3;
+}
+
+h2 {
+  @apply text-lg mb-2;
+}
+
+/* Dashboard içeriğini küçült */
+.dashboard-container {
+  @apply p-3 gap-3;
+}
+
+/* Card boyutlarını küçült */
+.card {
+  @apply p-3 text-xs;
+}
+
+/* Genel metin boyutları */
+p, span, a, label {
+  @apply text-xs;
+}
+
+/* Status bar için küçültmeler */
+.status-bar {
+  @apply h-10 text-xs;  /* Önceki değer muhtemelen h-12 veya h-14 idi */
+}

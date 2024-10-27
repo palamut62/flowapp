@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  /* config options here */
-};
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  }
+}
 
-export default nextConfig;
+module.exports = nextConfig
