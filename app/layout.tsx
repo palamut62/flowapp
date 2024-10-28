@@ -18,12 +18,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // URL'yi kontrol etmek için
+  const isAuthPage = typeof window !== 'undefined' && 
+    (window.location.pathname === '/login' || 
+     window.location.pathname === '/signup');
+
   return (
     <html lang="tr" suppressHydrationWarning>
       <body className={inter.className}>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        {isAuthPage ? (
+          children
+        ) : (
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        )}
       </body>
     </html>
   );
